@@ -1,6 +1,6 @@
 * Last name: Du
 * First name: Jessica
-* Github username:hdu2
+* Github username: hdu2
 
 * Instructions:
 
