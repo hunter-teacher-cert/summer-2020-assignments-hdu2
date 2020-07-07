@@ -76,9 +76,9 @@ public class SuperArray
 	{
 		if(numberElements > index)
 		{
-			for (int i = index; i < data.length-1; i++) //Have the current item store to data[index +1} from data[index] and repeat for the remaining elements. ****
+			for (int i = index; i < data.length-1; i++) //Have the current item store to data[index +1} from data[index] and repeat for the remaining elements.
 			{
-				data[i] = data[i+1]; //out of bound?  *****
+				data[i] = data[i+1]; //Bound resolved.
 			}
 			numberElements--;
 		}
