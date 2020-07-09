@@ -102,7 +102,7 @@ public class LList
 		/*If index is out of bounds, return null.*/
 	}
 	
-    public void insert(int index, String value) //Need to check this
+    public void insert(int index, String value) //insert right before index
 	{
 		if (index == 0) //If at index 0, then insert into the head/beginning of the linked list
 			addFront(value);
@@ -115,21 +115,18 @@ public class LList
 		
 			Node temp = head; // make a temp node
 			
-			while (counter + 1 < index && temp.getNext() != null) //Will this work? Does it work for edge cases?
+			while (counter + 1 < index && temp.getNext() != null)
 			{
 				temp = temp.getNext();
 				counter++;
 			}
 			
-				if (counter == index) // Will this work?
+				if (counter == index)
 				{
 				newNode.setNext(temp.getNext());
 				temp.setNext(newNode);
 				}
 		}
-	// move temp down the list until it's right BEFORE the insertion point
-
-	// insert 
     }
 	
     public void remove(int index) //Remove a node
@@ -144,7 +141,7 @@ public class LList
 			
 			int counter = 0;
 
-			for (counter=0; temp != null && counter < index; counter++) //Will this work? Even for edge cases?
+			for (counter=0; temp != null && counter < index; counter++)
 			{	
 				prev = temp;
 				temp = temp.getNext();
@@ -153,25 +150,23 @@ public class LList
 			if (index <= counter)
 			prev.setNext(temp.getNext()); //Skip one and go to the next node
 		}
-	// move tmp down the list until it's BEFORE the node we want to delete
 
-	// change tmp's next pointer to skip the node we are deleting 
     }
     
-	public int search(String key) //Does this work? Need to check
+	public int search(String key) //
 	{
 		int counter = 0;
 		Node temp = head;
 		
 		while (temp != null)
 		{
-			if (temp.getData() == key)
+			if (temp.getData() == key)//Returns the index of the first time key occurs in the list.
 				return counter;
 			counter++;
 			temp = temp.getNext();
 		}
-		return -1;	
-	/*Returns the index of the first time key occurs in the list.
-	Returns -1 if key is not found.*/
+		return -1;	//Returns -1 if key is not found
+	
+	
 	}
 }
