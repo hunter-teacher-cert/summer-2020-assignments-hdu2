@@ -8,6 +8,7 @@ public class LList
     public LList()
 	{
 		head = null;
+		int length = 0;
     }
 
 	public boolean isEmpty()
@@ -17,6 +18,7 @@ public class LList
 
     public void addFront(String data)
 	{
+		
 		Node newnode = new Node(data);
 
 	// first point the new node to the beginning
@@ -25,7 +27,8 @@ public class LList
 	// point head to the new node
 		head = newnode;
 		
-	//Do we need to length++?
+	//Do we need to length++? Yes we do
+		length++; //increase length
     }
 
     public String toString()
@@ -127,6 +130,7 @@ public class LList
 				temp.setNext(newNode);
 				}
 		}
+		length++; // increase length of Linked list
     }
 	
     public void remove(int index) //Remove a node
@@ -165,8 +169,8 @@ public class LList
 			counter++;
 			temp = temp.getNext();
 		}
+		length--; //decrease length when an element is removed from linked list
 		return -1;	//Returns -1 if key is not found
-	
 	
 	}
 }
